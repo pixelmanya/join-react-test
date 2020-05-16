@@ -1,53 +1,44 @@
-# Candidate Application & Score Calculator
-![JOIN React Test](https://i.imgur.com/msT4Blg.png)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Context
+## Available Scripts
 
-We love to give visual feedback to the recruiters about where their candidate stand in their pipeline.
-Proposed solution consists of 2 screens:
-1. *The applicant screen* - filling it in will send the application to the server
-1. *The candidate list screen* - where all existing and new candidates can be viewed (reflecting input from the previous screen)
+In the project directory, you can run:
 
-This app needs to display the list of candidates taken from this API: GET https://candidates.free.beeceptor.com/api/candidate
-(If API is not available, use file located in this repository under /data/candidates.json) and send a local request instead.
+### `yarn start`
 
-## Design
-Screens are provided in /data folder for reference, it doesn't have to look identical, just a visual reference, you can use Material or Bootstrap for UI components
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Requirements
-As a Candidate:
-- [ ] I want to be able to provide my data in application form without any field being required
-- [ ] *[OPTIONAL]* I want to be able to upload my photo
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-As a Recruiter:
-- [ ] I want to be able to view a list of my candidates
-- [ ] For each application calculate score:
-  - Up to 10% if full name provided
-  - 10% if email provided
-  - 10% if password provided
-  - 20% if phone provided
-  - *[OPTIONAL]* 50% if image uploaded (calculate accordingly if implemented or not)
-- [ ] I want by clicking on the "..." menu, be able to "delete" the candidate (hide from display)
-- [ ] I want by clicking on the "..." menu, be able to change candidate state from "submitted" to "in review" to either "not a fit" or "hired"
-  
-## Technical Notes
-There's no restriction to backend technology, you can e.g.:
-- utilize localStorage for candidate data storage (as your backend) and merge it with existing API data
-- spin up a NodeJS server
+### `yarn test`
 
-If the external API is too slow, make sure it's not visible or felt by the user, find a way to make load/wait time a pleasure.
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Tech Stack
-Use ReactJS with TypeScript, test your code with a preferred library of your choice, also feel free to choose either unit tests or E2E tests with Cypress
-Linter, CSSinJS is a plus
+### `yarn build`
 
-## Instructions
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Fork this repo
-- Commit early and often. We want to be able to check your way of thinking
-- Make the app public. Deploy it using the service of your choice (ZEIT, Cloud Run, Heroku)
-- Create a pull request
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-## Disclaimer
-You don't have to finish all of that, but we would really love to see a working piece.
-What's more important for us is to see your way of thinking and priority on tasks during implementation!
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
