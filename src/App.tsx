@@ -5,18 +5,22 @@ import Candidates from './pages/candidates'
 import { store, history, rrfProps } from './redux/store'
 import { Provider } from 'react-redux'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
+import { BaseStyle } from './assets/styles/join.css'
 
 const App: React.FC = () => {
   return (
-    <Provider store={store}>
-      <ReactReduxFirebaseProvider {...rrfProps}>
-        <Router history={history}>
-          <Switch>
-            <Route exact path="/" component={Candidates} />
-          </Switch>
-        </Router>
-      </ReactReduxFirebaseProvider>
-    </Provider>
+    <>
+      <BaseStyle />
+      <Provider store={store}>
+        <ReactReduxFirebaseProvider {...rrfProps}>
+          <Router history={history}>
+            <Switch>
+              <Route exact path="/" component={Candidates} />
+            </Switch>
+          </Router>
+        </ReactReduxFirebaseProvider>
+      </Provider>
+    </>
   )
 }
 
