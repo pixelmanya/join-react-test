@@ -4,10 +4,6 @@ import firebase from 'firebase/app'
 import { createFirestoreInstance } from 'redux-firestore'
 import { Store } from './store'
 
-const rrfConfig = {
-  userProfile: 'users',
-}
-
 firebase.initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
@@ -16,13 +12,9 @@ firebase.initializeApp({
 
 firebase.firestore()
 
-export default function initializeFirestore(store: Store) {
-  return {
-    rrfProps: {
-      firebase,
-      config: rrfConfig,
-      dispatch: store.dispatch,
-      createFirestoreInstance,
-    },
-  }
-}
+export const getRRFProps = (store: Store) => ({
+  firebase,
+  config: {},
+  dispatch: store.dispatch,
+  createFirestoreInstance,
+})

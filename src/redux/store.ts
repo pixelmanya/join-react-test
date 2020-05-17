@@ -7,7 +7,7 @@ import { createBrowserHistory } from 'history'
 import createSagaMiddleware from 'redux-saga'
 import { createLogger } from 'redux-logger'
 import rootReducer from './rootReducer'
-import initializeFirebase from './firebase.setup'
+import { getRRFProps } from './firebase.setup'
 
 const sagaMiddleware = createSagaMiddleware()
 const loggerMiddleware = (createLogger as any)()
@@ -34,4 +34,4 @@ const createStore = (preloadedState = {}) => {
 
 export const store = createStore()
 export type Store = typeof store
-export const { rrfProps } = initializeFirebase(store)
+export const rrfProps = getRRFProps(store)
