@@ -4,12 +4,10 @@ import {
   createStore as reduxCreateStore,
 } from 'redux'
 import { createBrowserHistory } from 'history'
-import createSagaMiddleware from 'redux-saga'
 import { createLogger } from 'redux-logger'
 import rootReducer from './rootReducer'
 import { getRRFProps } from './firebase.setup'
 
-const sagaMiddleware = createSagaMiddleware()
 const loggerMiddleware = (createLogger as any)()
 const composeEnhancers =
   (window as any)['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] || compose
@@ -17,7 +15,7 @@ const composeEnhancers =
 export const history = createBrowserHistory()
 
 const createStore = (preloadedState = {}) => {
-  const middlewares = [sagaMiddleware]
+  const middlewares = []
 
   if (process.env.NODE_ENV === 'development') {
     middlewares.push(loggerMiddleware)
