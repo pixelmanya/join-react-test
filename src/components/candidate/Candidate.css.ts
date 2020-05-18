@@ -44,6 +44,7 @@ export const StyledCandidateEmail = styled.span`
   display: block;
   font-size: 1rem;
   color: #8692ad;
+  margin: 0 0 1.5rem;
   font-weight: bold;
 `
 interface StyledCandidateStatusProps {
@@ -59,7 +60,7 @@ export const StyledCandidateStatus = styled.span(
   display: inline-block;
   text-transform: uppercase;
   padding: 0.2rem 0.5rem;
-  margin: 1.5rem 0 1rem;
+  margin: 0 0 1rem;
   font-size: .75rem;
   font-weight: bold;
   border-radius: 3px;

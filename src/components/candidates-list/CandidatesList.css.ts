@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const StyledCandidatesCount = styled.p`
   font-size: 1rem;
   color: rgb(143, 156, 178);
+  margin: 2rem 1rem 0;
 `
 
 export const StyledCandidatesList = styled.ul`
