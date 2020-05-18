@@ -7,7 +7,7 @@ export const BaseStyle = createGlobalStyle`
   body {
     font-family: Inter, 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 100%;
     line-height: 24px;
   }
 
