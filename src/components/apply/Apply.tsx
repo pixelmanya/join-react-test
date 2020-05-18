@@ -2,7 +2,6 @@ import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import {
   StyledApplyForm,
-  StyledApplyTitle,
   StyledApplyFormRow,
   StyledApplyFormLabel,
   StyledApplyFormField,
@@ -56,7 +55,6 @@ const Apply: React.FC = () => {
 
   return (
     <StyledApplyForm onSubmit={handleSubmit(handleApply)}>
-      <StyledApplyTitle>Interested in this job?</StyledApplyTitle>
       {fieldsSchema.map((field) => (
         <StyledApplyFormRow key={field.name}>
           <StyledApplyFormLabel htmlFor={field.name}>
