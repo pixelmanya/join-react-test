@@ -15,7 +15,7 @@ const Providers: React.FC = ({ children }) => {
   )
 }
 
-const customRender = (ui: React.ElementType, options?: object) =>
+const customRender = (ui: React.ReactElement, options?: object) =>
   render(ui, {
     wrapper: Providers,
     ...options,
