@@ -25,11 +25,19 @@ const ToggleStatus: React.FC<ToggleStatusProps> = ({ item }) => {
     setAnchorEl(null)
   }
 
+  const getItem = (item: ICandidate) =>
+    firestore.collection('candidates').doc(item.id)
+
   const handleToggleStatus = (status: CandidateStatus) => {
     handleClose()
-    firestore.collection('candidates').doc(item.id).update({
+    getItem(item).update({
       status,
     })
+  }
+
+  const handleDelete = () => {
+    handleClose()
+    getItem(item).delete()
   }
 
   return (
@@ -48,6 +56,7 @@ const ToggleStatus: React.FC<ToggleStatusProps> = ({ item }) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
+        <MenuItem onClick={handleDelete}>delete</MenuItem>
         {Object.values(CandidateStatus)
           .filter((status) => status !== item.status)
           .map((status) => (
