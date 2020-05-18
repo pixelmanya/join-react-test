@@ -9,6 +9,7 @@ export interface Candidate {
   firstName: string
   lastName: string
   phone: string
+  password: string
   status:
     | CandidateStatus.SUBMITTED
     | CandidateStatus.IN_REVIEW

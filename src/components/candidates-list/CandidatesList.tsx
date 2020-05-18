@@ -27,9 +27,11 @@ const calculateScore = (candidate: ICandidate) => {
 
   let score = 0
 
-  Object.keys(candidate).map(
-    (property) => (score += points[property] || 0) * factor
-  )
+  Object.keys(candidate).forEach((property: string) => {
+    if (candidate[property as keyof ICandidate]) {
+      score += (points[property] || 0) * factor
+    }
+  })
 
   return score
 }
