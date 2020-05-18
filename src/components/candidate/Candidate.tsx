@@ -42,7 +42,7 @@ const Candidate: React.FC<CandidateProps> = ({ item, score }) => {
 
   return (
     <StyledCandidate>
-      {avatar && <StyledCandidateAvatar src={avatar} />}
+      {avatar && <StyledCandidateAvatar src={avatar} data-testid="avatar" />}
       <StyledCandidateInfo>
         {(firstName || lastName) && (
           <StyledCandidateName>
@@ -56,7 +56,9 @@ const Candidate: React.FC<CandidateProps> = ({ item, score }) => {
           Applied at <span>{new Date(appliedAt).toLocaleDateString()}</span>
         </StyledCandidateAppliedAt>
       </StyledCandidateInfo>
-      <StyledProgress score={readableScore}>{readableScore}</StyledProgress>
+      <StyledProgress score={readableScore} data-testid="score">
+        {readableScore}
+      </StyledProgress>
       <StyledToggleStatus>
         <ToggleStatus item={item} />
       </StyledToggleStatus>

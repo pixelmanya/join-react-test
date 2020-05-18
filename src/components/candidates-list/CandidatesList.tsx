@@ -49,7 +49,9 @@ const getTitle = (itemsLength: number) => {
 const CandidatesList: React.FC<CandidatesListProps> = ({ items }) => {
   return (
     <>
-      <StyledCandidatesCount>{getTitle(items.length)}</StyledCandidatesCount>
+      <StyledCandidatesCount data-testid="candidates-count">
+        {getTitle(items.length)}
+      </StyledCandidatesCount>
       <StyledCandidatesList>
         {items.map((item) => (
           <StyledCandidatesListItem key={item.id}>
