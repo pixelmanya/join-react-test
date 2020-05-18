@@ -9,7 +9,9 @@ import {
   StyledCandidateStatus,
   StyledCandidateAppliedAt,
   StyledProgress,
+  StyledToggleStatus,
 } from './Candidate.css'
+import ToggleStatus from './CandidateToggleStatus'
 
 interface CandidateProps {
   item: ICandidate
@@ -34,10 +36,8 @@ const getReadableScore = (score: number) => {
   return ReadableScore.GOOD
 }
 
-const Candidate: React.FC<CandidateProps> = ({
-  item: { status, firstName, lastName, email, appliedAt, avatar },
-  score,
-}) => {
+const Candidate: React.FC<CandidateProps> = ({ item, score }) => {
+  const { status, firstName, lastName, email, appliedAt, avatar } = item
   const readableScore = getReadableScore(score)
 
   return (
@@ -57,6 +57,9 @@ const Candidate: React.FC<CandidateProps> = ({
         </StyledCandidateAppliedAt>
       </StyledCandidateInfo>
       <StyledProgress score={readableScore}>{readableScore}</StyledProgress>
+      <StyledToggleStatus>
+        <ToggleStatus item={item} />
+      </StyledToggleStatus>
     </StyledCandidate>
   )
 }

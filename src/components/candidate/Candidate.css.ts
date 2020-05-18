@@ -9,6 +9,7 @@ enum avatarSizes {
 }
 
 export const StyledCandidate = styled.section`
+  position: relative;
   display: grid;
   grid-template-columns: ${avatarSizes.MEDIUM} 3fr 1fr;
 
@@ -130,3 +131,9 @@ export const StyledProgress = styled.strong<StyledProgressProps>(
     }
   `
 )
+
+export const StyledToggleStatus = styled.div`
+  position: absolute;
+  bottom: -0.5rem;
+  right: -1rem;
+`

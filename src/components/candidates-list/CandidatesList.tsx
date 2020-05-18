@@ -29,8 +29,6 @@ const calculateScore = (candidate: ICandidate) => {
 
   Object.keys(candidate).map((property) => (score += points[property] || 0))
 
-  console.log(score)
-
   return score
 }
 
