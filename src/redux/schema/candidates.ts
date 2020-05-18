@@ -2,6 +2,7 @@ export enum CandidateStatus {
   SUBMITTED = 'submitted',
   IN_REVIEW = 'in review',
   NO_FIT = 'not a fit',
+  HIRED = 'hired',
 }
 export interface Candidate {
   id: string
