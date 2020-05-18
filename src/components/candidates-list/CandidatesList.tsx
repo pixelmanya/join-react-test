@@ -17,17 +17,19 @@ const calculateScore = (candidate: ICandidate) => {
   }
   const factor = !candidate.avatar ? 2 : 1
   const points = {
-    firstName: 5 * factor,
-    lastName: 5 * factor,
-    email: 10 * factor,
-    password: 10 * factor,
-    phone: 20 * factor,
+    firstName: 5,
+    lastName: 5,
+    email: 10,
+    password: 10,
+    phone: 20,
     avatar: candidate.avatar ? 50 : 0,
   } as Points
 
   let score = 0
 
-  Object.keys(candidate).map((property) => (score += points[property] || 0))
+  Object.keys(candidate).map(
+    (property) => (score += points[property] || 0) * factor
+  )
 
   return score
 }

@@ -114,7 +114,7 @@ export const StyledProgress = styled.strong<StyledProgressProps>(
   ({ score }) => css`
     text-align: right;
     text-transform: uppercase;
-    font-size: 1.25rem;
+    font-size: .9125rem;
     letter-spacing: 1px;
 
     ${
@@ -127,14 +127,14 @@ export const StyledProgress = styled.strong<StyledProgressProps>(
     ${
       score === ReadableScore.GOOD &&
       css`
-        color: #2776fd;
+        color: #2172fd;
       `
     }
 
     ${
       score === ReadableScore.INCOMPLETE &&
       css`
-        color: #d05757;
+        color: #f54852;
       `
     }
   `

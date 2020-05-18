@@ -25,11 +25,11 @@ export enum ReadableScore {
 }
 
 const getReadableScore = (score: number) => {
-  if (score < 30) {
+  if (score <= 50) {
     return ReadableScore.INCOMPLETE
   }
 
-  if (score < 60) {
+  if (score < 70) {
     return ReadableScore.OKAY
   }
 
