@@ -9,11 +9,7 @@ import {
   CandidateStatus,
 } from '../../redux/schema/candidates'
 
-interface ToggleStatusProps {
-  item: ICandidate
-}
-
-const ToggleStatus: React.FC<ToggleStatusProps> = ({ item }) => {
+const ToggleStatus: React.FC<{ item: ICandidate }> = ({ item }) => {
   const firestore = useFirestore()
   const [anchorEl, setAnchorEl] = React.useState(null)
 

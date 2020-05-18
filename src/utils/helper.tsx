@@ -25,18 +25,17 @@ export const calculateScore = (candidate: Candidate) => {
   interface Points {
     [key: string]: number
   }
-  const factor = !candidate.avatar ? 2 : 1
-  const points = {
+  const points: Points = {
     firstName: 5,
     lastName: 5,
     email: 10,
     password: 10,
     phone: 20,
     avatar: candidate.avatar ? 50 : 0,
-  } as Points
+  }
+  const factor = !candidate.avatar ? 2 : 1
 
   let score = 0
-
   Object.keys(candidate).forEach((property: string) => {
     if (candidate[property as keyof Candidate]) {
       score += (points[property] || 0) * factor

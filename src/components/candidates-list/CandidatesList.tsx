@@ -8,10 +8,6 @@ import { Candidate as ICandidate } from '../../redux/schema/candidates'
 import Candidate from '../candidate/Candidate'
 import { calculateScore } from '../../utils/helper'
 
-interface CandidatesListProps {
-  items: ICandidate[]
-}
-
 const getTitle = (itemsLength: number) => {
   if (!itemsLength) {
     return 'No applications submitted.'
@@ -24,7 +20,7 @@ const getTitle = (itemsLength: number) => {
   return `${itemsLength} applications submitted`
 }
 
-const CandidatesList: React.FC<CandidatesListProps> = ({ items }) => {
+const CandidatesList: React.FC<{ items: ICandidate[] }> = ({ items }) => {
   return (
     <>
       <StyledCandidatesCount data-testid="candidates-count">

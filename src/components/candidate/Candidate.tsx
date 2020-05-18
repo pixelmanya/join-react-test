@@ -14,12 +14,10 @@ import {
 import ToggleStatus from './CandidateToggleStatus'
 import { getReadableScore, getFormattedDate } from '../../utils/helper'
 
-interface CandidateProps {
-  item: ICandidate
-  score: number
-}
-
-const Candidate: React.FC<CandidateProps> = ({ item, score }) => {
+const Candidate: React.FC<{ item: ICandidate; score: number }> = ({
+  item,
+  score,
+}) => {
   const { status, firstName, lastName, email, appliedAt, avatar } = item
   const readableScore = getReadableScore(score)
 

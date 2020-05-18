@@ -47,16 +47,9 @@ export const StyledCandidateEmail = styled.span`
   margin: 0 0 1.5rem;
   font-weight: bold;
 `
-interface StyledCandidateStatusProps {
-  status:
-    | CandidateStatus.SUBMITTED
-    | CandidateStatus.IN_REVIEW
-    | CandidateStatus.NO_FIT
-    | CandidateStatus.HIRED
-}
 
 export const StyledCandidateStatus = styled.span(
-  (props: StyledCandidateStatusProps) => css`
+  (props: { status: CandidateStatus }) => css`
   display: inline-block;
   text-transform: uppercase;
   padding: 0.2rem 0.5rem;
@@ -107,11 +100,7 @@ export const StyledCandidateAppliedAt = styled.span`
   }
 `
 
-interface StyledProgressProps {
-  score: ReadableScore
-}
-
-export const StyledProgress = styled.strong<StyledProgressProps>(
+export const StyledProgress = styled.strong<{ score: ReadableScore }>(
   ({ score }) => css`
     text-align: right;
     text-transform: uppercase;

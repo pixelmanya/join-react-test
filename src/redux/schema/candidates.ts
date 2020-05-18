@@ -10,10 +10,7 @@ export interface Candidate {
   lastName: string
   phone: string
   password: string
-  status:
-    | CandidateStatus.SUBMITTED
-    | CandidateStatus.IN_REVIEW
-    | CandidateStatus.NO_FIT
+  status: CandidateStatus
   avatar: string
   appliedAt: string
   email: string
