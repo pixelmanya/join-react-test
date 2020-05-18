@@ -51,6 +51,7 @@ interface StyledCandidateStatusProps {
     | CandidateStatus.SUBMITTED
     | CandidateStatus.IN_REVIEW
     | CandidateStatus.NO_FIT
+    | CandidateStatus.HIRED
 }
 
 export const StyledCandidateStatus = styled.span(
@@ -82,6 +83,13 @@ export const StyledCandidateStatus = styled.span(
     css`
       background: #fde7e8;
       color: #f63c48;
+    `
+  }
+  ${
+    props.status === CandidateStatus.HIRED &&
+    css`
+      background: #d3facd;
+      color: #2f8f1d;
     `
   }
 `
