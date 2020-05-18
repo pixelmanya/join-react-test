@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { CandidateStatus } from '../../redux/schema/candidates'
-import { ReadableScore } from './Candidate'
+import { ReadableScore } from '../../utils/helper'
 
 enum avatarSizes {
   SMALL = '40px',

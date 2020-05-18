@@ -6,34 +6,10 @@ import {
 } from './CandidatesList.css'
 import { Candidate as ICandidate } from '../../redux/schema/candidates'
 import Candidate from '../candidate/Candidate'
+import { calculateScore } from '../../utils/helper'
 
 interface CandidatesListProps {
   items: ICandidate[]
-}
-
-const calculateScore = (candidate: ICandidate) => {
-  interface Points {
-    [key: string]: number
-  }
-  const factor = !candidate.avatar ? 2 : 1
-  const points = {
-    firstName: 5,
-    lastName: 5,
-    email: 10,
-    password: 10,
-    phone: 20,
-    avatar: candidate.avatar ? 50 : 0,
-  } as Points
-
-  let score = 0
-
-  Object.keys(candidate).forEach((property: string) => {
-    if (candidate[property as keyof ICandidate]) {
-      score += (points[property] || 0) * factor
-    }
-  })
-
-  return score
 }
 
 const getTitle = (itemsLength: number) => {

@@ -12,28 +12,11 @@ import {
   StyledToggleStatus,
 } from './Candidate.css'
 import ToggleStatus from './CandidateToggleStatus'
+import { getReadableScore, getFormattedDate } from '../../utils/helper'
 
 interface CandidateProps {
   item: ICandidate
   score: number
-}
-
-export enum ReadableScore {
-  INCOMPLETE = 'Incomplete',
-  OKAY = 'Okay',
-  GOOD = 'Good',
-}
-
-const getReadableScore = (score: number) => {
-  if (score <= 50) {
-    return ReadableScore.INCOMPLETE
-  }
-
-  if (score < 70) {
-    return ReadableScore.OKAY
-  }
-
-  return ReadableScore.GOOD
 }
 
 const Candidate: React.FC<CandidateProps> = ({ item, score }) => {
@@ -53,7 +36,7 @@ const Candidate: React.FC<CandidateProps> = ({ item, score }) => {
         {email && <StyledCandidateEmail>{email}</StyledCandidateEmail>}
         <StyledCandidateStatus status={status}>{status}</StyledCandidateStatus>
         <StyledCandidateAppliedAt>
-          Applied at <span>{new Date(appliedAt).toLocaleDateString()}</span>
+          Applied at <span>{getFormattedDate(appliedAt)}</span>
         </StyledCandidateAppliedAt>
       </StyledCandidateInfo>
       <StyledProgress score={readableScore} data-testid="score">
