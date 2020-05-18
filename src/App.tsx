@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Router } from 'react-router'
 import { Switch, Route } from 'react-router-dom'
-import Candidates from './pages/candidates'
+import CandidatesPage from './pages/candidates/CandidatesPage'
 import { store, history, rrfProps } from './redux/store'
 import { Provider } from 'react-redux'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <ReactReduxFirebaseProvider {...rrfProps}>
           <Router history={history}>
             <Switch>
-              <Route exact path="/" component={Candidates} />
+              <Route exact path="/" component={CandidatesPage} />
             </Switch>
           </Router>
         </ReactReduxFirebaseProvider>

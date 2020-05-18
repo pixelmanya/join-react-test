@@ -5,6 +5,7 @@ import { useFirestoreConnect } from 'react-redux-firebase'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { Candidate as ICandidate } from '../../redux/schema/candidates'
 import CandidatesList from '../../components/candidates-list/CandidatesList'
+import { StyledProgressContainer } from './CandidatesPage.css'
 
 const PageCandidates: React.FC = () => {
   useFirestoreConnect('candidates')
@@ -19,7 +20,11 @@ const PageCandidates: React.FC = () => {
     return <CandidatesList items={candidates} />
   }
 
-  return <CircularProgress />
+  return (
+    <StyledProgressContainer>
+      <CircularProgress />
+    </StyledProgressContainer>
+  )
 }
 
 export default PageCandidates
