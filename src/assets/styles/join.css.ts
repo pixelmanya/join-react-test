@@ -4,6 +4,10 @@ import { normalize } from 'polished'
 export const BaseStyle = createGlobalStyle`
   ${normalize}
 
+  #root {
+    height: 100vh;
+  }
+
   body {
     font-family: Inter, 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 400;
